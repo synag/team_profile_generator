@@ -18,6 +18,10 @@ describe('Engineer', () => {
         });
       
     
+        // Arrange
+        test('getGithub method should be synac', () => {
+          expect(engineer.getGithub()).toBe("synac");
+      });
     
     
   

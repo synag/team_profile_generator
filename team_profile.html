@@ -1,26 +1,4 @@
-
-const Engineer =require('../lib/Engineer')
-const Intern = require('../lib/Intern')
-const Manager = require('../lib/Manager')
-
-// const manager = new Manager(answers.manager_name, answers.manager_id,answers.manager_email, manager_number);
-const manager = new Manager("carl",2,"cbenbow@gmail", "410-804-8642");
-// const engineer1 = new Manager(answers.manager_name, answers.manager_id,answers.manager_email, manager_number);
-// const engineer2 = new Manager(answers.manager_name, answers.manager_id,answers.manager_email, manager_number);
-// const engineer3 = new Manager(answers.manager_name, answers.manager_id,answers.manager_email, manager_number);
-// const intern = new Manager(answers.manager_name, answers.manager_id,answers.manager_email, manager_number);
-
-//  generatePeople = (name) =>
-//    ``
-
-//    
-// }
-
-//gemerate intern object 
-//generate engineer
-
-
-const generate_html = (answers) => ` 
+ 
 
 <!DOCTYPE html>
 <html lang="en">
@@ -44,16 +22,16 @@ const generate_html = (answers) => `
         <div class="card" style="width: 18rem">
           <img src="..." class="card-img-top" alt="..." />
           <div class="card-body">
-            <h5 class="card-title">${manager.name}</h5>
+            <h5 class="card-title">carl</h5>
             <p class="card-text">
               Some quick example text to build on the card title and make up the
               bulk of the card's content.
             </p>
           </div>
           <ul class="list-group list-group-flush">
-            <li class="list-group-item light" > Id Number ${manager.id}</li>
-            <li class="list-group-item">Email: ${manager.email}</li>
-            <li class="list-group-item">Office Phone: ${manager.officeNumber}</li>
+            <li class="list-group-item light" > id Number 2An item</li>
+            <li class="list-group-item">Email: cbenbow@gmail</li>
+            <li class="list-group-item">Office Phone: 410-804-8642</li>
           </ul>
         </div>
       </div>
@@ -141,9 +119,4 @@ const generate_html = (answers) => `
 
 
 </body>
-</html>`
-
-
-
-module.exports = generate_html
-
+</html>
