@@ -1,23 +1,32 @@
+const Engineer = require("../lib/Engineer");
+const Intern = require("../lib/Intern");
+const Manager = require("../lib/Manager");
 
-const Engineer =require('../lib/Engineer')
-const Intern = require('../lib/Intern')
-const Manager = require('../lib/Manager')
+const engineer1 = new Manager(
+  answers.manager_name,
+  answers.manager_id,
+  answers.manager_email,
+  manager_number
+);
+const engineer2 = new Manager(
+  answers.manager_name,
+  answers.manager_id,
+  answers.manager_email,
+  manager_number
+);
+const engineer3 = new Manager(
+  answers.manager_name,
+  answers.manager_id,
+  answers.manager_email,
+  manager_number
+);
+const intern = new Manager(
+  answers.manager_name,
+  answers.manager_id,
+  answers.manager_email,
+  manager_number
+);
 
-// const manager = new Manager(answers.manager_name, answers.manager_id,answers.manager_email, manager_number);
-const manager = new Manager("carl",2,"cbenbow@gmail", "410-804-8642");
-// const engineer1 = new Manager(answers.manager_name, answers.manager_id,answers.manager_email, manager_number);
-// const engineer2 = new Manager(answers.manager_name, answers.manager_id,answers.manager_email, manager_number);
-// const engineer3 = new Manager(answers.manager_name, answers.manager_id,answers.manager_email, manager_number);
-// const intern = new Manager(answers.manager_name, answers.manager_id,answers.manager_email, manager_number);
-
-//  generatePeople = (name) =>
-//    ``
-
-//    
-// }
-
-//gemerate intern object 
-//generate engineer
 
 
 const generate_html = (answers) => ` 
@@ -44,16 +53,17 @@ const generate_html = (answers) => `
         <div class="card" style="width: 18rem">
           <img src="..." class="card-img-top" alt="..." />
           <div class="card-body">
-            <h5 class="card-title">${manager.name}</h5>
-            <p class="card-text">
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
-            </p>
+            <h2 class="card-title">${manager.getName()}</h2>
+            <h3 class="card-text">
+              ${manager.getRole()}.
+            </h3>
           </div>
           <ul class="list-group list-group-flush">
-            <li class="list-group-item light" > Id Number ${manager.id}</li>
-            <li class="list-group-item">Email: ${manager.email}</li>
-            <li class="list-group-item">Office Phone: ${manager.officeNumber}</li>
+            <li class="list-group-item light" > Id Number ${manager.getId()}</li>
+            <li class="list-group-item">Email: ${manager.getEmail()}</li>
+            <li class="list-group-item">Office Phone: ${
+              manager.officeNumber
+            }</li>
           </ul>
         </div>
       </div>
@@ -61,16 +71,16 @@ const generate_html = (answers) => `
         <div class="card" style="width: 18rem">
           <img src="..." class="card-img-top" alt="..." />
           <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
-            </p>
+          <h2 class="card-title">${engineer.getName()}</h2>
+          <h3 class="card-text">
+            ${engineer.getRole()}.
+          </h3>
+        </div>
           </div>
           <ul class="list-group list-group-flush">
-            <li class="list-group-item">An item</li>
-            <li class="list-group-item">A second item</li>
-            <li class="list-group-item">A third item</li>
+            <li class="list-group-item">${engineer.getId()}</li>
+            <li class="list-group-item"${engineer.getEmail()}</li>
+            <li class="list-group-item">${enginner.getGithub()}</li>
           </ul>
         </div>
       </div>
@@ -78,16 +88,16 @@ const generate_html = (answers) => `
         <div class="card" style="width: 18rem">
           <img src="..." class="card-img-top" alt="..." />
           <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
-            </p>
+          <h2 class="card-title">${engineer.getName()}</h2>
+          <h3 class="card-text">
+            ${engineer.getRole()}.
+          </h3>
+        </div>
           </div>
           <ul class="list-group list-group-flush">
-            <li class="list-group-item">An item</li>
-            <li class="list-group-item">A second item</li>
-            <li class="list-group-item">A third item</li>
+          <li class="list-group-item">${engineer.getId()}</li>
+          <li class="list-group-item"${engineer.getEmail()}</li>
+          <li class="list-group-item">${enginner.getGithub()}</li>
           </ul>
         </div>
       </div>
@@ -97,16 +107,16 @@ const generate_html = (answers) => `
     <div class="card" style="width: 18rem">
       <img src="..." class="card-img-top" alt="..." />
       <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
-        </p>
+      <h2 class="card-title">${engineer.getName()}</h2>
+      <h3 class="card-text">
+        ${engineer.getRole()}.
+      </h3>
+    </div>
       </div>
       <ul class="list-group list-group-flush">
-        <li class="list-group-item">An item</li>
-        <li class="list-group-item">A second item</li>
-        <li class="list-group-item">A third item</li>
+      <li class="list-group-item">${engineer.getId()}</li>
+      <li class="list-group-item"${engineer.getEmail()}</li>
+      <li class="list-group-item">${enginner.getGithub()}</li>
       </ul>
     </div>
 </div>
@@ -114,16 +124,16 @@ const generate_html = (answers) => `
     <div class="card" style="width: 18rem">
       <img src="..." class="card-img-top" alt="..." />
       <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
-        </p>
+      <h2 class="card-title">${intern.name}</h2>
+      <h3 class="card-text">
+        ${intern.getRole()}.
+      </h3>
+    </div>
       </div>
       <ul class="list-group list-group-flush">
-        <li class="list-group-item">An item</li>
-        <li class="list-group-item">A second item</li>
-        <li class="list-group-item">A third item</li>
+      <li class="list-group-item">${intern.getId()}</li>
+            <li class="list-group-item"${intern.getEmail()}</li>
+            <li class="list-group-item">${intern.getSchool()}</li>
       </ul>
     </div>
 </div>
@@ -141,9 +151,6 @@ const generate_html = (answers) => `
 
 
 </body>
-</html>`
+</html>`;
 
-
-
-module.exports = generate_html
-
+module.exports = generate_html;
