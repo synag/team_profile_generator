@@ -1,4 +1,17 @@
 
+const Engineer =require('./lib/Engineer')
+const Intern = require('./lib/Intern')
+const Manager = require('./lib/Manager')
+
+ generatePeople = (name) =>
+   ``
+
+//    
+// }
+
+//gemerate intern object 
+//generate engineer
+
 
 const generate_html = (answers) => ` 
 
@@ -11,7 +24,8 @@ const generate_html = (answers) => `
     <title>Document</title>
 </head>
 <body>
-    
+
+${Engineer(answers.name,answers.id, answers.email, answers.github)}
 </body>
 </html>`
 
