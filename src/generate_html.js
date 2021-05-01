@@ -2,29 +2,35 @@ const Engineer = require("../lib/Engineer");
 const Intern = require("../lib/Intern");
 const Manager = require("../lib/Manager");
 
-const engineer1 = new Manager(
+const manager = new Manager(
   answers.manager_name,
   answers.manager_id,
   answers.manager_email,
   manager_number
 );
-const engineer2 = new Manager(
-  answers.manager_name,
-  answers.manager_id,
-  answers.manager_email,
-  manager_number
+const engineer1 = new Engineer(
+  answers.engineer_name,
+  answers.engineer_id,
+  answers.engineer_email,
+  answer.engineer_github
 );
-const engineer3 = new Manager(
-  answers.manager_name,
-  answers.manager_id,
-  answers.manager_email,
-  manager_number
+const engineer2 = new Engineer(
+  answers.engineer_name,
+  answers.engineer_id,
+  answers.engineer_email,
+  answer.engineer_github
 );
-const intern = new Manager(
-  answers.manager_name,
-  answers.manager_id,
-  answers.manager_email,
-  manager_number
+const engineer3 = new Engineer(
+  answers.engineer_name,
+  answers.engineer_id,
+  answers.engineer_email,
+  answer.engineer_github
+);
+const intern = new Intern(
+  answers.intern_name,
+  answers.intern_id,
+  answers.intern_email,
+  answes.intern_school
 );
 
 
