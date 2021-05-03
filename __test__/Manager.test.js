@@ -3,8 +3,8 @@ const Manager = require('../lib/Manager');
 
 describe('Manager', () => {
   
-              const manager = new Manager("carl",40,"cbenbow.gmail.com","410-804-8642");
-    // Positive test
+  const manager = new  Manager("carl",40,"cbenbow.gmail.com","410-804-8642");      
+    
     
         // Arrange
         test('employer number should be 410-804-8642', () => {
@@ -17,6 +17,9 @@ describe('Manager', () => {
             expect(manager.getRole()).toBe("Manager");
         });
       
+        test('getName method should be overident to manager', () => {
+          expect(manager.getName()).toBe("carl");
+      });
     
     
     

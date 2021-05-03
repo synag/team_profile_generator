@@ -2,42 +2,16 @@ const Engineer = require("../lib/Engineer");
 const Intern = require("../lib/Intern");
 const Manager = require("../lib/Manager");
 
-const manager = new Manager(
-  answers.manager_name,
-  answers.manager_id,
-  answers.manager_email,
-  manager_number
-);
-const engineer1 = new Engineer(
-  answers.engineer_name,
-  answers.engineer_id,
-  answers.engineer_email,
-  answer.engineer_github
-);
-const engineer2 = new Engineer(
-  answers.engineer_name,
-  answers.engineer_id,
-  answers.engineer_email,
-  answer.engineer_github
-);
-const engineer3 = new Engineer(
-  answers.engineer_name,
-  answers.engineer_id,
-  answers.engineer_email,
-  answer.engineer_github
-);
-const intern = new Intern(
-  answers.intern_name,
-  answers.intern_id,
-  answers.intern_email,
-  answes.intern_school
-);
+
+  // const manager = new Manager();
+  const engineer = new Engineer();
+  const intern = new Intern();
+  const manager = new Manager();
 
 
-
-const generate_html = (answers) => ` 
-
-<!DOCTYPE html>
+const generate_html = (answers) => 
+   
+`<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -53,98 +27,112 @@ const generate_html = (answers) => `
     <link rel="stylesheet" href="./dist/profile_generator.css" />
   </head>
   <body>
-<div class="container">
+    <div><h1 class="header" style="text-align: center; margin-top: 1em; background-color: #485757; padding: 1em; color: wheat">Team Profile Generator </h1></div>
+<div class="container" style="
+    margin-top:5em" >
     <div class="row">
       <div class="col">
-        <div class="card" style="width: 18rem">
-          <img src="..." class="card-img-top" alt="..." />
+        <div class="card shadow" style="width: 18rem">
           <div class="card-body">
-            <h2 class="card-title">${manager.getName()}</h2>
+            <h2 class="card-title">${manager.getName(answers.manager_name)}</h2>
             <h3 class="card-text">
-              ${manager.getRole()}.
+              ${manager.getRole()}
             </h3>
           </div>
           <ul class="list-group list-group-flush">
-            <li class="list-group-item light" > Id Number ${manager.getId()}</li>
-            <li class="list-group-item">Email: ${manager.getEmail()}</li>
+            <li class="list-group-item" > Id Number ${manager.getId(
+              answers.manager_id
+            )}</li>
+            <li class="list-group-item">Email: ${manager.getEmail(
+              answers.manager_email
+            )}</li>
             <li class="list-group-item">Office Phone: ${
-              manager.officeNumber
+              answers.manager_number
             }</li>
           </ul>
         </div>
       </div>
       <div class="col">
-        <div class="card" style="width: 18rem">
-          <img src="..." class="card-img-top" alt="..." />
+        <div class="card shadow" style="width: 18rem">
           <div class="card-body">
-          <h2 class="card-title">${engineer.getName()}</h2>
-          <h3 class="card-text">
-            ${engineer.getRole()}.
-          </h3>
-        </div>
+            <h2 class="card-title">${engineer.getName(answers.engineer_name)}</h2>
+            <h3 class="card-text">
+              ${engineer.getRole()}
+            </h3>
           </div>
           <ul class="list-group list-group-flush">
-            <li class="list-group-item">${engineer.getId()}</li>
-            <li class="list-group-item"${engineer.getEmail()}</li>
-            <li class="list-group-item">${enginner.getGithub()}</li>
+            <li class="list-group-item" > Id Number ${engineer.getId(
+              answers.engineer_id
+            )}</li>
+            <li class="list-group-item">Email: ${engineer.getEmail(
+              answers.engineer_email
+            )}</li>
+            <li class="list-group-item">Github: ${engineer.getGithub(answers.engineer_github)}
+            </li>
           </ul>
         </div>
       </div>
       <div class="col">
-        <div class="card" style="width: 18rem">
-          <img src="..." class="card-img-top" alt="..." />
+        <div class="card shadow" style="width: 18rem">
           <div class="card-body">
-          <h2 class="card-title">${engineer.getName()}</h2>
-          <h3 class="card-text">
-            ${engineer.getRole()}.
-          </h3>
-        </div>
+            <h2 class="card-title">${engineer.getName(answers.engineer_name)}</h2>
+            <h3 class="card-text">
+              ${engineer.getRole()}
+            </h3>
           </div>
           <ul class="list-group list-group-flush">
-          <li class="list-group-item">${engineer.getId()}</li>
-          <li class="list-group-item"${engineer.getEmail()}</li>
-          <li class="list-group-item">${enginner.getGithub()}</li>
+            <li class="list-group-item" > Id Number ${engineer.getId(
+              answers.engineer_id
+            )}</li>
+            <li class="list-group-item">Email: ${engineer.getEmail(
+              answers.engineer_email
+            )}</li>
+            <li class="list-group-item">Github: ${engineer.getGithub(answers.engineer_github)}</li>
           </ul>
         </div>
       </div>
-    </div>
-<div class="row">
-    <div class="col">
-    <div class="card" style="width: 18rem">
-      <img src="..." class="card-img-top" alt="..." />
-      <div class="card-body">
-      <h2 class="card-title">${engineer.getName()}</h2>
-      <h3 class="card-text">
-        ${engineer.getRole()}.
-      </h3>
-    </div>
-      </div>
-      <ul class="list-group list-group-flush">
-      <li class="list-group-item">${engineer.getId()}</li>
-      <li class="list-group-item"${engineer.getEmail()}</li>
-      <li class="list-group-item">${enginner.getGithub()}</li>
-      </ul>
-    </div>
-</div>
-<div class="col">
-    <div class="card" style="width: 18rem">
-      <img src="..." class="card-img-top" alt="..." />
-      <div class="card-body">
-      <h2 class="card-title">${intern.name}</h2>
-      <h3 class="card-text">
-        ${intern.getRole()}.
-      </h3>
-    </div>
-      </div>
-      <ul class="list-group list-group-flush">
-      <li class="list-group-item">${intern.getId()}</li>
-            <li class="list-group-item"${intern.getEmail()}</li>
-            <li class="list-group-item">${intern.getSchool()}</li>
-      </ul>
-    </div>
-</div>
-</div>
-</div>
+      <div class="row" style="
+      margin-top: 9em;
+  ">
+        <div class="col">
+          <div class="card shadow" style="width: 18rem">
+            <div class="card-body">
+              <h2 class="card-title">${engineer.getName(answers.manager_name)}</h2>
+              <h3 class="card-text">
+                ${engineer.getRole()}
+              </h3>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item" > Id Number ${engineer.getId(
+                answers.engineer_id
+              )}</li>
+              <li class="list-group-item">Email: ${engineer.getEmail(
+                answers.egineer_email
+              )}</li>
+              <li class="list-group-item">Office Phone: ${engineer.getGithub(answers.engineer_github)}</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow" style="width: 18rem">
+            <div class="card-body">
+              <h2 class="card-title">${intern.getName(answers.intern_name)}</h2>
+              <h3 class="card-text">
+                ${intern.getRole()}
+              </h3>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item" > Id Number ${intern.getId(
+                answers.intern_id
+              )}</li>
+              <li class="list-group-item">Email: ${intern.getEmail(
+                answers.intern_email
+              )}</li>
+              <li class="list-group-item">Office Phone: ${engineer.getGithub(answers.engineer_github)}</li>
+            </ul>
+          </div>
+        </div>
+        
 
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
@@ -153,10 +141,13 @@ const generate_html = (answers) => `
     ></script>
   </body>
 </html>
-
-
-
 </body>
-</html>`;
+</html>
+         `
 
+          
+          
 module.exports = generate_html;
+          
+
+
