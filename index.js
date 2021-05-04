@@ -5,9 +5,48 @@ const generate_html = require('./src/generate_html')
 
 
 
-const questions = [
-  
-  {
+
+const start = () => {
+  inquirer
+    .prompt({
+      name: 'opening',
+      type: 'list',
+      message: 'Welcome! What roles do you like to select?',
+      choices: [
+        'Manager',
+        'Intern',
+        'Engineer',
+      ],
+    })
+    .then((answer) => {
+      switch (answer.opening) {
+        case 'Manager':
+          addManager();
+          break;
+
+        case 'Intern':
+          addIntern();
+          break;
+
+        case 'Engineer':
+          addEngineer();
+          break;
+
+        case 'Exit':
+          connection.end();
+            const htmlPageContent = generate_html(answers);
+          break;
+
+        default:
+          console.log(`Invalid action: ${answer.action}`);
+          break;
+      }
+    });
+};
+
+const addManager = () => {
+ const Manager = [
+ {   
     type: "input",
     name: "manager_name",
     message: "Welcome Managers! Please enter your name?",
@@ -26,76 +65,83 @@ const questions = [
       type: "input",
       name: "manager_number",
       message:"What is office number",
+  
     },
-    {
-      type: "list",
-      name: "roleselection",
-      message: "It is time to add your team! What is your first employees role?",
-      choices: [ "Engineer", "Intern"],
-    },
+ ];
+   inquirer.prompt(Manager).then((answer) => {
+      
+      console.log(answer);
+      start()
+          
     
-     {
-      type: "input",
-      name: "engineer_name",
-      message: "What is your engineer's name?",
-      when: (answers) => answers.roleselection === 'Engineer',
-    },
-      {
-        type: "input",
-        name: "engineer_id",
-        message: "What is your engineer's employee id?",
-        when: (answers) => answers.roleselection === 'Engineer',
-      },
-      {
-        type: "input",
-        name: "engineer_email",
-        message:"What is your engineer's email",
-        when: (answers) => answers.roleselection === 'Engineer',
-      },
+  });
+};
+
+const addIntern = () => {
+  inquirer
+    .prompt({
+       
+    type: "input",
+    name: "manager_name",
+    message: "Welcome Managers! Please enter your name?",
+  },
     {
       type: "input",
-      name: "engineer_github",
-      message: "what is your engineer's github username?",
-      when: (answers) => answers.roleselection === 'Engineer',
+      name: "manager_id",
+      message: "What is your employee id?",
     },
     {
-      type: "confirm",
-      name: "continue",
-      message: "Would you like to add another team member ",
-      choices: [ 'yes', 'no'],
+      type: "input",
+      name: "manager_email",
+      message:"What is your email",
     },
-    // {
-    //   type: "list",
-    //   name: "roleselection",
-    //   message: " What is your employees role?",
-    //   choices: [ "Engineer", "Intern"],
-    //   when: (answers) => answers.continue === 'yes',
-    // },
-    // {
-    //   type: "input",
-    //   name: "engineer_name_2",
-    //   message: "What is your engineer's name?",
-    //   when: (answers) => answers.roleselection === 'Engineer',
-    // },
-    //   {
-    //     type: "input",
-    //     name: "engineer_id_2",
-    //     message: "What is your engineer's employee id?",
-    //     when: (answers) => answers.roleselection === 'Engineer',
-    //   },
-    //   {
-    //     type: "input",
-    //     name: "engineer_email_2",
-    //     message:"What is your engineer's email",
-    //     when: (answers) => answers.roleselection === 'Engineer',
-    //   },
-    // {
-    //   type: "input",
-    //   name: "engineer_github_2",
-    //   message: "what is your engineer's github username?",
-    //   when: (answers) => answers.roleselection === 'Engineer',
-    // },
-    // {
+    {
+      type: "input",
+      name: "manager_number",
+      message:"What is office number",
+  
+  
+    })
+    .then((answer) => {
+      
+      console.log(answer);
+          
+    
+  });
+};
+
+const addEngineer = () => {
+  inquirer
+    .prompt({
+       
+    type: "input",
+    name: "manager_name",
+    message: "Welcome Managers! Please enter your name?",
+  },
+    {
+      type: "input",
+      name: "manager_id",
+      message: "What is your employee id?",
+    },
+    {
+      type: "input",
+      name: "manager_email",
+      message:"What is your email",
+    },
+    {
+      type: "input",
+      name: "manager_number",
+      message:"What is office number",
+  
+  
+    })
+    .then((answer) => {
+      
+      console.log(answer);
+          
+    
+  });
+};
     //   type: "list",
     //   name: "continue",
     //   message: "Would you like to add another team member ",
@@ -133,25 +179,29 @@ const questions = [
     //   when: (answers) => answers.roleselection === 'Intern',
     // },
    
-  ];
-  inquirer.prompt(questions).then((answers) => {
-    const htmlPageContent = generate_html(answers);
+  // ];
+  
+  // inquirer.prompt().then((answers) => {
+  //   const htmlPageContent = generate_html(answers);
    
-    // const license = answers.license
+  //   // const license = answers.license
   
-    console.log(answers);
+  //   console.log(answers);
    
   
   
-    fs.writeFile("team_profile1.html", htmlPageContent, (err) =>
-      err ? console.log(err) : console.log("Success")
-    );
-    //we need to update the head/ I think but maybe not
-  });
+  //   fs.writeFile("team_profile1.html", htmlPageContent, (err) =>
+  //     err ? console.log(err) : console.log("Success")
+  //   );
+  //   //we need to update the head/ I think but maybe not
+  // });
   
   // add this initialize
-  function init() {}
+  function init() {
+   
+  }
   
   // Function call to initialize app
   init();
+  start()
   

@@ -75,19 +75,19 @@ const generate_html = (answers) =>
       <div class="col">
         <div class="card shadow" style="width: 18rem">
           <div class="card-body">
-            <h2 class="card-title">${engineer.getName(answers.engineer_name)}</h2>
+            <h2 class="card-title">${engineer.getName(answers.engineer_name_2)}</h2>
             <h3 class="card-text">
               ${engineer.getRole()}
             </h3>
           </div>
           <ul class="list-group list-group-flush">
             <li class="list-group-item" > Id Number ${engineer.getId(
-              answers.engineer_id
+              answers.engineer_id_2
             )}</li>
             <li class="list-group-item">Email: ${engineer.getEmail(
-              answers.engineer_email
+              answers.engineer_email_2
             )}</li>
-            <li class="list-group-item">Github: ${engineer.getGithub(answers.engineer_github)}</li>
+            <li class="list-group-item">Github: ${engineer.getGithub(answers.engineer_github_2)}</li>
           </ul>
         </div>
       </div>
@@ -97,19 +97,19 @@ const generate_html = (answers) =>
         <div class="col">
           <div class="card shadow" style="width: 18rem">
             <div class="card-body">
-              <h2 class="card-title">${engineer.getName(answers.manager_name)}</h2>
+              <h2 class="card-title">${engineer.getName(answers.manager_name_3)}</h2>
               <h3 class="card-text">
                 ${engineer.getRole()}
               </h3>
             </div>
             <ul class="list-group list-group-flush">
               <li class="list-group-item" > Id Number ${engineer.getId(
-                answers.engineer_id
+                answers.engineer_id_3
               )}</li>
               <li class="list-group-item">Email: ${engineer.getEmail(
-                answers.egineer_email
+                answers.egineer_email_3
               )}</li>
-              <li class="list-group-item">Office Phone: ${engineer.getGithub(answers.engineer_github)}</li>
+              <li class="list-group-item">Office Phone: ${engineer.getGithub(answers.engineer_github_3)}</li>
             </ul>
           </div>
         </div>
@@ -128,7 +128,7 @@ const generate_html = (answers) =>
               <li class="list-group-item">Email: ${intern.getEmail(
                 answers.intern_email
               )}</li>
-              <li class="list-group-item">Office Phone: ${engineer.getGithub(answers.engineer_github)}</li>
+              <li class="list-group-item">Office Phone: ${engineer.getGithub(answers.intern_school)}</li>
             </ul>
           </div>
         </div>
