@@ -2,6 +2,9 @@
 const fs = require('fs')
 const inquirer = require('inquirer')
 const generate_html = require('./src/generate_html')
+const engineerTeam = []
+const internTeam = []
+const managers = []
 
 
 
@@ -69,75 +72,75 @@ const addManager = () => {
     },
  ];
    inquirer.prompt(Manager).then((answer) => {
-      
+      managers.push(answer)
       console.log(answer);
+      console.log(managers)
       start()
+     
           
     
   });
 };
 
 const addIntern = () => {
-  inquirer
-    .prompt({
-       
-    type: "input",
-    name: "manager_name",
-    message: "Welcome Managers! Please enter your name?",
-  },
-    {
-      type: "input",
-      name: "manager_id",
-      message: "What is your employee id?",
-    },
-    {
-      type: "input",
-      name: "manager_email",
-      message:"What is your email",
-    },
-    {
-      type: "input",
-      name: "manager_number",
-      message:"What is office number",
-  
-  
-    })
-    .then((answer) => {
-      
-      console.log(answer);
+  const Intern = [
+    {   
+       type: "input",
+       name: "intern_name",
+       message: "Welcome Managers! Please enter your name?",
+     },
+       {
+         type: "input",
+         name: "intern_id",
+         message: "What is your employee id?",
+       },
+       {
+         type: "input",
+         name: "intern_email",
+         message:"What is your email",
+       },
+       {
+         type: "input",
+         name: "intern_school",
+         message:"What school do you attend?",
+     
+       },
+    ];
+      inquirer.prompt(Intern).then((answer) => {
+         
+         console.log(answer);
           
     
   });
 };
 
 const addEngineer = () => {
-  inquirer
-    .prompt({
-       
-    type: "input",
-    name: "manager_name",
-    message: "Welcome Managers! Please enter your name?",
-  },
-    {
-      type: "input",
-      name: "manager_id",
-      message: "What is your employee id?",
-    },
-    {
-      type: "input",
-      name: "manager_email",
-      message:"What is your email",
-    },
-    {
-      type: "input",
-      name: "manager_number",
-      message:"What is office number",
-  
-  
-    })
-    .then((answer) => {
-      
-      console.log(answer);
+  const Engineer = [
+    {   
+       type: "input",
+       name: "engineer_name",
+       message: "Welcome Managers! Please enter your name?",
+     },
+       {
+         type: "input",
+         name: "engineer_id",
+         message: "What is your employee id?",
+       },
+       {
+         type: "input",
+         name: "engineer_email",
+         message:"What is your email",
+       },
+       {
+         type: "input",
+         name: "engineer_github",
+         message:"What is your github id?",
+     
+       },
+    ];
+      inquirer.prompt(Engineer).then((answer) => {
+         
+         console.log(answer);
           
     
   });
@@ -148,23 +151,7 @@ const addEngineer = () => {
     //   choices: [ "yes", "no"],
     // },
     // {
-    //   type: "list",
-    //   name: "roleselection",
-    //   message: "for your next What is your first employees role?",
-    //   choices: [ "Engineer", "Intern"],
-    //   when: (answers) => answers.continue === "yes",
-    // },
-    // {
-    //   type: "input",
-    //   name: "intern_name",
-    //   message: "What is your name?",
-    //   when: (answers) => answers.roleselection === 'Intern',
-    // },
-    //   {
-    //     type: "input",
-    //     name: "intern_id",
-    //     message: "What is your employee id?",
-    //     when: (answers) => answers.roleselection === 'Intern',
+    //
     //   },
     //   {
     //     type: "input",
