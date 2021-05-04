@@ -41,6 +41,9 @@ const start = () => {
             const htmlPageContent = generate_html(managers,internTeam, engineerTeam);
             fs.writeFile("team_profile1.html", htmlPageContent, (err) =>
             err ? console.log(err) : console.log("Success"));
+            console.log(managers);
+            console.log(internTeam);
+            console.log(engineerTeam);
           break;
       }
     });
@@ -104,8 +107,7 @@ const addIntern = () => {
        },
     ];
       inquirer.prompt(Intern).then((answer) => {
-         
-         console.log(answer);
+      
          internTeam.push(answer)
          start()
     
@@ -138,7 +140,8 @@ const addEngineer = () => {
     ];
       inquirer.prompt(Engineer).then((answer) => {
          
-         console.log(answer);
+         
+         engineerTeam.push(answer)
          start();
 
   });

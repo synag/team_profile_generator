@@ -34,16 +34,16 @@ const generate_html = (managers,internTeam, engineerTeam) =>
       <div class="col">
         <div class="card shadow" style="width: 18rem">
           <div class="card-body">
-            <h2 class="card-title">${manager.getName()}</h2>
+            <h2 class="card-title">${manager.getName(managers[0].manager_name)}</h2>
             <h3 class="card-text">
               ${manager.getRole()}
             </h3>
           </div>
           <ul class="list-group list-group-flush">
-            <li class="list-group-item" > Id Number ${manager.getId(
+            <li class="list-group-item" > Id Number ${manager.getId(managers[0].manager_id
               
             )}</li>
-            <li class="list-group-item">Email: ${manager.getEmail(
+            <li class="list-group-item">Email: ${manager.getEmail(managers[0].manager_email
               
             )}</li>
             <li class="list-group-item">Office Phone: 
