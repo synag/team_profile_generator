@@ -9,7 +9,7 @@ const Manager = require("../lib/Manager");
   const manager = new Manager();
 
 
-const generate_html = (answers) => 
+const generate_html = (managers,internTeam, engineerTeam) => 
    
 `<!DOCTYPE html>
 <html lang="en">
@@ -34,40 +34,19 @@ const generate_html = (answers) =>
       <div class="col">
         <div class="card shadow" style="width: 18rem">
           <div class="card-body">
-            <h2 class="card-title">${manager.getName(answers.manager_name)}</h2>
+            <h2 class="card-title">${manager.getName()}</h2>
             <h3 class="card-text">
               ${manager.getRole()}
             </h3>
           </div>
           <ul class="list-group list-group-flush">
             <li class="list-group-item" > Id Number ${manager.getId(
-              answers.manager_id
+              
             )}</li>
             <li class="list-group-item">Email: ${manager.getEmail(
-              answers.manager_email
+              
             )}</li>
-            <li class="list-group-item">Office Phone: ${
-              answers.manager_number
-            }</li>
-          </ul>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card shadow" style="width: 18rem">
-          <div class="card-body">
-            <h2 class="card-title">${engineer.getName(answers.engineer_name)}</h2>
-            <h3 class="card-text">
-              ${engineer.getRole()}
-            </h3>
-          </div>
-          <ul class="list-group list-group-flush">
-            <li class="list-group-item" > Id Number ${engineer.getId(
-              answers.engineer_id
-            )}</li>
-            <li class="list-group-item">Email: ${engineer.getEmail(
-              answers.engineer_email
-            )}</li>
-            <li class="list-group-item">Github: ${engineer.getGithub(answers.engineer_github)}
+            <li class="list-group-item">Office Phone: 
             </li>
           </ul>
         </div>
@@ -75,19 +54,39 @@ const generate_html = (answers) =>
       <div class="col">
         <div class="card shadow" style="width: 18rem">
           <div class="card-body">
-            <h2 class="card-title">${engineer.getName(answers.engineer_name_2)}</h2>
+            <h2 class="card-title">${engineer.getName()}</h2>
             <h3 class="card-text">
               ${engineer.getRole()}
             </h3>
           </div>
           <ul class="list-group list-group-flush">
             <li class="list-group-item" > Id Number ${engineer.getId(
-              answers.engineer_id_2
+            
             )}</li>
             <li class="list-group-item">Email: ${engineer.getEmail(
-              answers.engineer_email_2
+              
             )}</li>
-            <li class="list-group-item">Github: ${engineer.getGithub(answers.engineer_github_2)}</li>
+            <li class="list-group-item">Github: ${engineer.getGithub()}
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card shadow" style="width: 18rem">
+          <div class="card-body">
+            <h2 class="card-title">${engineer.getName()}</h2>
+            <h3 class="card-text">
+              ${engineer.getRole()}
+            </h3>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item" > Id Number ${engineer.getId(
+              
+            )}</li>
+            <li class="list-group-item">Email: ${engineer.getEmail(
+              
+            )}</li>
+            <li class="list-group-item">Github: ${engineer.getGithub()}</li>
           </ul>
         </div>
       </div>
@@ -97,38 +96,38 @@ const generate_html = (answers) =>
         <div class="col">
           <div class="card shadow" style="width: 18rem">
             <div class="card-body">
-              <h2 class="card-title">${engineer.getName(answers.manager_name_3)}</h2>
+              <h2 class="card-title">${engineer.getName()}</h2>
               <h3 class="card-text">
                 ${engineer.getRole()}
               </h3>
             </div>
             <ul class="list-group list-group-flush">
               <li class="list-group-item" > Id Number ${engineer.getId(
-                answers.engineer_id_3
+                
               )}</li>
               <li class="list-group-item">Email: ${engineer.getEmail(
-                answers.egineer_email_3
+               
               )}</li>
-              <li class="list-group-item">Office Phone: ${engineer.getGithub(answers.engineer_github_3)}</li>
+              <li class="list-group-item">Office Phone: ${engineer.getGithub()}</li>
             </ul>
           </div>
         </div>
         <div class="col">
           <div class="card shadow" style="width: 18rem">
             <div class="card-body">
-              <h2 class="card-title">${intern.getName(answers.intern_name)}</h2>
+              <h2 class="card-title">${intern.getName()}</h2>
               <h3 class="card-text">
                 ${intern.getRole()}
               </h3>
             </div>
             <ul class="list-group list-group-flush">
               <li class="list-group-item" > Id Number ${intern.getId(
-                answers.intern_id
+                
               )}</li>
               <li class="list-group-item">Email: ${intern.getEmail(
-                answers.intern_email
+                
               )}</li>
-              <li class="list-group-item">Office Phone: ${engineer.getGithub(answers.intern_school)}</li>
+              <li class="list-group-item">Office Phone: ${engineer.getGithub()}</li>
             </ul>
           </div>
         </div>

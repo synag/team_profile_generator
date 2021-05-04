@@ -19,6 +19,7 @@ const start = () => {
         'Manager',
         'Intern',
         'Engineer',
+        'Exit Application'
       ],
     })
     .then((answer) => {
@@ -35,13 +36,11 @@ const start = () => {
           addEngineer();
           break;
 
-        case 'Exit':
-          connection.end();
-            const htmlPageContent = generate_html(answers);
-          break;
-
-        default:
-          console.log(`Invalid action: ${answer.action}`);
+        case 'Exit Application':
+          // connection.end();
+            const htmlPageContent = generate_html(managers,internTeam, engineerTeam);
+            fs.writeFile("team_profile1.html", htmlPageContent, (err) =>
+            err ? console.log(err) : console.log("Success"));
           break;
       }
     });
@@ -52,7 +51,7 @@ const addManager = () => {
  {   
     type: "input",
     name: "manager_name",
-    message: "Welcome Managers! Please enter your name?",
+    message: "Welcome Manager! Please enter your name?",
   },
     {
       type: "input",
@@ -73,8 +72,6 @@ const addManager = () => {
  ];
    inquirer.prompt(Manager).then((answer) => {
       managers.push(answer)
-      console.log(answer);
-      console.log(managers)
       start()
      
           
@@ -87,7 +84,7 @@ const addIntern = () => {
     {   
        type: "input",
        name: "intern_name",
-       message: "Welcome Managers! Please enter your name?",
+       message: "Welcome Intern! Please enter your name?",
      },
        {
          type: "input",
@@ -109,7 +106,8 @@ const addIntern = () => {
       inquirer.prompt(Intern).then((answer) => {
          
          console.log(answer);
-          
+         internTeam.push(answer)
+         start()
     
   });
 };
@@ -119,7 +117,7 @@ const addEngineer = () => {
     {   
        type: "input",
        name: "engineer_name",
-       message: "Welcome Managers! Please enter your name?",
+       message: "Welcome engineer! Please enter your name?",
      },
        {
          type: "input",
@@ -141,8 +139,8 @@ const addEngineer = () => {
       inquirer.prompt(Engineer).then((answer) => {
          
          console.log(answer);
-          
-    
+         start();
+
   });
 };
     //   type: "list",
