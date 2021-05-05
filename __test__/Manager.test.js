@@ -18,7 +18,7 @@ describe('Manager', () => {
         });
       
         test('getName method should be overident to manager', () => {
-          expect(manager.getName()).toBe("carl");
+          expect(manager.getName("carl")).toBe("carl");
       });
     
     

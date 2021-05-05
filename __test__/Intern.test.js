@@ -18,8 +18,8 @@ describe('Intern', () => {
         });
       
     
-        test('getSchool method should should be stonehill', () => {
-          expect(intern.getSchool()).toBe("stonehill");
+        test('getSchool method should be stonehill', () => {
+          expect(intern.getSchool("stonehill")).toBe("stonehill");
       });
     
   
