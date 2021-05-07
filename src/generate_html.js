@@ -2,16 +2,13 @@ const Engineer = require("../lib/Engineer");
 const Intern = require("../lib/Intern");
 const Manager = require("../lib/Manager");
 
+// const manager = new Manager();
+const engineer = new Engineer();
+const intern = new Intern();
+const manager = new Manager();
 
-  // const manager = new Manager();
-  const engineer = new Engineer();
-  const intern = new Intern();
-  const manager = new Manager();
-
-
-const generate_html = (managers,internTeam, engineerTeam) => 
-   
-`<!DOCTYPE html>
+const generate_html = (managers, internTeam, engineerTeam) =>
+  `<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -34,19 +31,23 @@ const generate_html = (managers,internTeam, engineerTeam) =>
       <div class="col">
         <div class="card shadow" style="width: 18rem">
           <div class="card-body">
-            <h2 class="card-title">${manager.getName(managers[0].manager_name)}</h2>
+            <h2 class="card-title">${manager.getName(
+              managers[0].manager_name
+            )}</h2>
             <h3 class="card-text">
               ${manager.getRole()}
             </h3>
           </div>
           <ul class="list-group list-group-flush">
-            <li class="list-group-item" > Id Number: ${manager.getId(managers[0].manager_id
-              
+            <li class="list-group-item" > Id Number: ${manager.getId(
+              managers[0].manager_id
             )}</li>
-            <li class="list-group-item">Email: ${manager.getEmail(managers[0].manager_email
-              
-            )}</li>
-            <li class="list-group-item">Office Phone: ${managers[0].manager_office_phone}
+            <li class="list-group-item">Email: <a href="mailto: ${manager.getEmail(
+              managers[0].manager_email
+            )}">${manager.getEmail(managers[0].manager_email)}</a></li>
+            <li class="list-group-item">Office Phone: ${
+              managers[0].manager_number
+            }
             </li>
           </ul>
         </div>
@@ -54,19 +55,23 @@ const generate_html = (managers,internTeam, engineerTeam) =>
       <div class="col">
         <div class="card shadow" style="width: 18rem">
           <div class="card-body">
-            <h2 class="card-title">${engineer.getName(engineerTeam[0].engineer_name)}</h2>
+            <h2 class="card-title">${engineer.getName(
+              engineerTeam[0].engineer_name
+            )}</h2>
             <h3 class="card-text">
               ${engineer.getRole()}
             </h3>
           </div>
           <ul class="list-group list-group-flush">
-            <li class="list-group-item" > Id Number: ${engineer.getId(engineerTeam[0].engineer_id
-            
+            <li class="list-group-item" > Id Number: ${engineer.getId(
+              engineerTeam[0].engineer_id
             )}</li>
-            <li class="list-group-item">Email: ${engineer.getEmail(engineerTeam[0].engineer_email
-              
-            )}</li>
-            <li class="list-group-item">Github Username: ${engineer.getGithub(engineerTeam[0].engineer_github)}
+            <li class="list-group-item">Email: <a href="mailto:${engineer.getEmail(
+              engineerTeam[0].engineer_email
+            )}">${engineer.getEmail(engineerTeam[0].engineer_email)}<a/></li>
+            <li class="list-group-item">Github Username:<a href="https://github.com/MikeOchtman"> ${engineer.getGithub(
+              engineerTeam[0].engineer_github
+            )}</a>
             </li>
           </ul>
         </div>
@@ -74,19 +79,23 @@ const generate_html = (managers,internTeam, engineerTeam) =>
       <div class="col">
         <div class="card shadow" style="width: 18rem">
           <div class="card-body">
-            <h2 class="card-title">${engineer.getName(engineerTeam[1].engineer_name)}</h2>
+            <h2 class="card-title">${engineer.getName(
+              engineerTeam[1].engineer_name
+            )}</h2>
             <h3 class="card-text">
               ${engineer.getRole()}
             </h3>
           </div>
           <ul class="list-group list-group-flush">
-            <li class="list-group-item" > Id Number: ${engineer.getId(engineerTeam[1].engineer_id
-              
+            <li class="list-group-item" > Id Number: ${engineer.getId(
+              engineerTeam[1].engineer_id
             )}</li>
-            <li class="list-group-item">Email: ${engineer.getEmail(engineerTeam[1].engineer_email
-              
-            )}</li>
-            <li class="list-group-item">Github Username: ${engineer.getGithub(engineerTeam[1].engineer_github)}</li>
+            <li class="list-group-item">Email: <a href="mailto:${engineer.getEmail(
+              engineerTeam[1].engineer_email
+            )}">${engineer.getEmail(engineerTeam[1].engineer_email)}</a></li>
+            <li class="list-group-item">Github Username: <a href="https://github.com/abhisheknaiidu"> ${engineer.getGithub(
+              engineerTeam[1].engineer_github
+            )}</a></li>
           </ul>
         </div>
       </div>
@@ -96,38 +105,48 @@ const generate_html = (managers,internTeam, engineerTeam) =>
         <div class="col">
           <div class="card shadow" style="width: 18rem">
             <div class="card-body">
-              <h2 class="card-title">${engineer.getName(engineerTeam[2].engineer_name)}</h2>
+              <h2 class="card-title">${engineer.getName(
+                engineerTeam[2].engineer_name
+              )}</h2>
               <h3 class="card-text">
                 ${engineer.getRole()}
               </h3>
             </div>
             <ul class="list-group list-group-flush">
-              <li class="list-group-item" > Id Number: ${engineer.getId(engineerTeam[2].engineer_id
-                
+              <li class="list-group-item" > Id Number: ${engineer.getId(
+                engineerTeam[2].engineer_id
               )}</li>
-              <li class="list-group-item">Email: ${engineer.getEmail(engineerTeam[2].engineer_email
-               
-              )}</li>
-              <li class="list-group-item">Github Username: ${engineer.getGithub(engineerTeam[2].engineer_github)}</li>
+              <li class="list-group-item">Email:<a href="mailto:${engineer.getEmail(
+                engineerTeam[2].engineer_email
+              )}">${engineer.getEmail(engineerTeam[2].engineer_email)}</a></li>
+              <li class="list-group-item">Github Username:<a href="https://github.com/hilburn"> ${engineer.getGithub(
+                engineerTeam[2].engineer_github
+              )}</a></li>
             </ul>
           </div>
         </div>
         <div class="col">
           <div class="card shadow" style="width: 18rem">
             <div class="card-body">
-              <h2 class="card-title">${intern.getName(internTeam[0].intern_name)}</h2>
+              <h2 class="card-title">${intern.getName(
+                internTeam[0].intern_name
+              )}</h2>
               <h3 class="card-text">
                 ${intern.getRole()}
               </h3>
             </div>
             <ul class="list-group list-group-flush">
-              <li class="list-group-item" > Id Number: ${intern.getId(internTeam[0].intern_id
-                
+              <li class="list-group-item" > Id Number:${intern.getId(
+                internTeam[0].intern_id
               )}</li>
-              <li class="list-group-item">Email: ${intern.getEmail(internTeam[0].intern_email
-                
-              )}</li>
-              <li class="list-group-item">School: ${intern.getSchool(internTeam[0].intern_name)}</li>
+              <li class="list-group-item">Email:<a href="mailto:${intern.getEmail(
+                internTeam[0].intern_email
+              )}">${intern.getEmail(
+                internTeam[0].intern_email
+              )}</a></li>
+              <li class="list-group-item">School: <a href="https://www.stonehill.edu">${intern.getSchool(
+                internTeam[0].intern_school
+              )}</a></li>
             </ul>
           </div>
         </div>
@@ -142,11 +161,6 @@ const generate_html = (managers,internTeam, engineerTeam) =>
 </html>
 </body>
 </html>
-         `
+         `;
 
-          
-          
 module.exports = generate_html;
-          
-
-
